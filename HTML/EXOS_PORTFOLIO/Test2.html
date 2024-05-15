@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+const numero = { "un": 1, "deux": 2, "trois": 3 };
+const fruit = { "vert": "kiwi", "rouge": "fraise", "jaune": "citron" };
+console.log( numero, fruit );
+// On décompose l’objet avec l’instruction for :
+for (let curKey in fruit) {
+let curValue = fruit[curKey];
+console.log('Couleur courante : ' + curKey , ' fruit associé : ' + curValue);
+}
+</script>
+</body>
+</html>

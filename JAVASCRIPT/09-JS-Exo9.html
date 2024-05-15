@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>J’apprends JavaScript</h1>
+    <input id="ch" type="text" />
+    <input type="button" value="Modifier" onClick="changer_dom();" />
+
+    <script>
+      let modifier = false
+        function changer_dom() {
+            if (modifier == false) {
+            document.querySelector('h1').textContent = "J'apprends Javascript DOM !";
+            console.log ( document.querySelector('#ch').value );
+            document.querySelector('#ch').value = "Nathan";
+            document.body.style.backgroundColor = "red";
+            let myAnchor = document.createElement('a');
+            let textToLink = document.createTextNode("Wikipedia");
+            myAnchor.appendChild(textToLink);
+            myAnchor.href = "https://www.wikipedia.org/";
+            document.body.appendChild(myAnchor);
+            modifier = true
+            } else if (modifier == true) {
+            document.querySelector('h1').textContent = "J'apprends Javascript !";
+            console.log ( document.querySelector('#ch').value );
+            document.querySelector('#ch').value = "";
+            document.body.style.backgroundColor = "";
+            // let myAnchor = document.createElement('');
+            // let textToLink = document.createTextNode("");
+            // myAnchor.appendChild(textToLink);
+            // myAnchor.href = "";
+            // document.body.appendChild(myAnchor);      
+            document.querySelector('a').setAttribute('style', "display:none");
+            //to remove wikipedia link ^^^^^
+      }
+
+        }
+    
+            
+   
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Menu par défaut</li>
+        </ul>
+        
+<script>
+
+const items = {
+        "Lien 1" : "https://google.fr",
+        "Lien 2" : "https://wikipedia.fr",
+        "Lien 3" : "https://sio56.org",
+        "Lien 4" : "https://www.rte.ie/"
+};
+
+const list = document.getElementById("list");
+//On décompose le tableau avec la méthode foreach() :
+/*
+items.forEach( function(curItem, curKey ){
+list.innerHTML += '<li key=' + curKey +' > ' + curItem + ' </li>';
+});*/
+
+for (let curKey in items) {
+    let curValue = items[curKey]
+    //list.innerHTML += Lien;
+    console.log( curKey+' '+ curValue)
+    //list.innerHTML += '<li key=' + curKey +' > ' + curValue + ' </li>';
+
+    list.innerHTML += '<a href="'+ curValue +'">' + curKey+ '</a><br/>';
+}
+
+
+
+</script>
+</body>
+</html>

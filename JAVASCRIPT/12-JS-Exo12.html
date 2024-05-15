@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id='titre'></div>
+<!-- void('') équivalent à "#" , mais ici aucune modification de l’URL -->
+<a href="javascript:void('');" id="reset">
+Finalement, ce message va rester...
+</a>
+<!-- Nous devons placer le script ICI
+afin qu'il puisse lire le DOM -->
+<script>
+// Fonction qui permet de changer le contenu HTML sur un ID :
+function changeTxt(html, id) {
+document.getElementById(id).innerHTML = html;
+}
+//On charge le message sur l'ID "titre" :
+let msg = "<h2>Ce message va disparaitre dans 5 secondes ...</h2>";
+changeTxt(msg, 'titre');
+//Valeur booléen pour savoir si timeout est fini :
+let is_fini = false;
+//Lancement de la méthode setTimeout associée à une variable timeID.
+//Nous devons l'identifier avec timeID pour l'arrêter avec clearTimeout :
+let timeID = setTimeout( function() {
+//Action à la fin du temps :
+changeTxt('', 'titre');
+changeTxt('Trop tard !', 'reset');
+is_fini=true;
+}, 5000); //5 secondes
+//Récupère le clique de souris sur l'ID "reset" et lance la fonction :
+//"arrete(x)" avec son paramètre x.
+reset.addEventListener('click', function(){ arrete(is_fini); } );
+//Fonction d'arrêt de setTimeout avec clearTimeout + messages
+function arrete(my_boolean) {
+if(!my_boolean) {
+clearTimeout(timeID);
+changeTxt('<h3><u>It is too late.</u></h3>', 'titre');
+changeTxt('', 'reset');
+} else {
+location.reload(); //recharge la page du navigateur
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Cliquer pour changer l'image ...</h4>
+<!— OnClick est un événement du DOM, sa valeur est associée au JS -->
+<div onClick="changer_image();">
+<img id="im" src="https://plandejardin-jardinbiologique.com/wa_images/freesia.jpg" />
+</div>
+<script>
+function changer_image() {
+    const new_im = "https://plandejardin-jardinbiologique.com/wa_images/colchique.jpg";
+    document.getElementById('im').setAttribute("src", new_im);
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let output=''; //On déclare une variable vide
+for (let i = 0; i < 10; i++) {
+//Si i / 2 ne possède pas un reste, logiquement i est pair :
+if (i % 2 != 0) {
+//continue va sauter l'itération courante et passer à la suivante
+continue;
+}
+output += // += permet de concaténer "output" à chaque passage de la boucle
+'i stocke la valeur ' + i + ' lors du passage n°'
++ (i + 1) + ' dans la boucle\n';
+}
+console.log(output);
+
+for (let i = 0; i < 15; i++) {
+console.log(
+'Je dois stopper ce script au numéro 15 lors du passage n°'
++ (i + 1) + ' dans la boucle\n'+'Script stoppé sur ligne 16');
+}
+</script>
+</body>
+</html>

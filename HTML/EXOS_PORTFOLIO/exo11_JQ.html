@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script> $(document).ready(function () {
+            $("div").on("click", function () {
+                alert("Le champ de texte est vide");
+            });
+            $("div").mousemove(function () {
+                $("h1").toggle();
+            });
+            $("#ck").click(function () {
+                if ($("#ck").is(":checked")) {
+
+                    $("#email").val("ncr1989@gmail.com");
+                    //$("h2").show();
+                } else {
+                    $("#email").val("");
+                    //$("h2").hide();
+                }
+            });
+            $("#email").change(function () {
+                alert("Erreur.");
+            });
+            $("button").on("click", function () {
+            $("div").css({ 'background-color': 'green' });
+            $("div").text("changed");
+            });
+            
+
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <div style="width:90px;height:90px;background-color:red;cursor:pointer;"><br><b>Cliquez ICI...</b></div>
+    <input id="email" type="text" />
+    <input id="ck" type="checkbox" />
+    <button> </button>
+
+
+    <h1>Bienvenue!</h1>
+
+
+</body>
+
+</html>

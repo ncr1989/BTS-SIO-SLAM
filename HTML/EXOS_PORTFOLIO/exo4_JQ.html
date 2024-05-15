@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script> $(document).ready(function () {
+            $("table tr").each(function (i) {
+                if (i % 2) {
+                    $(this).addClass("lignePaire");
+                    $(".lignePaire").css({"background-color": "red"});
+                }
+            });
+
+
+
+        })</script>
+
+</head>
+
+<body>
+    <table width="75%">
+        <tr>
+            <td>ligne 1</td>
+        </tr>
+        <tr>
+            <td>ligne 2</td>
+        </tr>
+        <tr>
+            <td>ligne 3</td>
+        </tr>
+        <tr>
+            <td>ligne 4</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

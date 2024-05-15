@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TEST DOM</title>
+    <style>
+        .rouge {
+background-color:red;
+}
+.bleu {
+background-color:lightblue;
+}
+
+    </style>
+</head>
+<body class="rouge">
+        <div id="monID">
+        <p style="display:none"> Bonjour ! </p>
+        </div>
+        <div class="maClasse"></div>
+        <div id="autreID"></div>
+        <br/>
+        <div>
+        <span class="textBox"></span>
+        <input type="checkbox" />
+        <input type="text" id="monInput" name="bob" value="Chargement..." />
+        </div>
+        <script>
+    alert( document.querySelector('p').textContent );
+    alert( 'Le contenu HTML de la div MonID est :' + document.getElementById('monID').innerHTML );
+    document.querySelector('p').textContent = "Le DOM est chargé !";
+    document.querySelector('p').setAttribute("style", "display:bloc;");
+    // récuperer modifier un parametre
+    document.querySelector('p').insertAdjacentHTML("afterbegin", "<h1>JS DOM</h1>");
+    //inserer texte dans le dom à un point specifique
+    document.querySelector('p').insertAdjacentHTML("beforeend", "<p>Une ligne en plus ajoutée.</p>");
+    document.querySelector('body').classList.remove("rouge");
+    // remove style
+    document.querySelector('body').classList.add("bleu");
+    // ajouter style
+    document.querySelector('.maClasse').textContent = "<b>Contenu TEXT de la classe mis à jour !<b>";
+    // ajouter texte en bold
+    document.querySelector('#autreID').innerHTML = "<b>Contenu HTML de l'autre ID mis à jour !<b>";
+    let inputName = document.querySelector('#monInput').getAttribute('name')
+    //chercher l'attribut name 
+    document.querySelector('.textBox').innerHTML = "Nom du paramètre NAME =><b>" + inputName + '</b><br />';
+    document.querySelector('input[type=checkbox]').checked = true;
+    document.querySelector('#monInput').value = "Contenu mis à jour !";
+</script>
+</body>
+</html>
